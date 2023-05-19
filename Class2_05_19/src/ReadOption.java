@@ -1,6 +1,7 @@
 
 import static java.lang.System.out;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 public class ReadOption {
 
 	public static void main(String[] args) {
@@ -54,10 +55,20 @@ public class ReadOption {
 //		callAverage(1,2);
 //		callAverage(1,2,3);
 		
-		int grade1 = 89;
-		int grade2 = 50;
-		char grade = convert((callAverage(grade1,grade2)));
-		out.println(grade);
+//		int grade1 = 89;
+//		int grade2 = 50;
+//		char grade = convert((callAverage(grade1,grade2)));
+//		out.println(grade);
+		
+		//5th case Creating a class
+		Student stud1 = new Student(21);
+		stud1.fName = "Mike";
+		out.println(stud1.fName + "Is from " + stud1.schoolName);
+		out.println(stud1.fName + "Is " + stud1.getAge());
+		
+		JOptionPane.showMessageDialog(null, stud1.fName);
+		
+		
 		
 	}
 	
