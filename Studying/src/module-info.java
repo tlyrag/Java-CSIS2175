@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author tlyra
+ *
+ */
+module Studying {
+}
