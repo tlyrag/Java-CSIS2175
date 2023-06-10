@@ -29,10 +29,19 @@ public class Main {
 //		}
 //		System.out.println(i);
 		//RandomClass.setNumber(5);
-		RandomClass A = new RandomClass();
-		int a = A.GetNumber();
-	
-		System.out.println(a);
+		/// Second Case Receiving 2 inputs
+		System.out.println("Please enter your age: ");
+		int age = input.nextInt();
+		//System.out.println("Please enter your age2: ");
+		//int age2 = input.nextInt();
+		System.out.println("Please enter your name: ");
+		String name = input.next();
+		//input.nextLine(); // Need to add this line so it Can consume the buffer, otherwise
+		// the code below will run before the age is parsed
+		System.out.println("Hi, "+ name);
+		System.out.println("Your age is: " +age);
+		//System.out.println("Your age2 is: " +age2);
+		//System.out.println("Your age is: " +(age + 1));
 	}
 	public static int GetLastDigit(int number) {
 		while(number>10) {
