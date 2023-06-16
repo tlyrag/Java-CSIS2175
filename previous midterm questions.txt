@@ -1,0 +1,12 @@
+Random Number from min to max integer
+
+Give two cards to the user
+user has an option to fold or bet
+if fold lose one dollar
+if bet  win 2 dolars 
+
+
+matrix
+3 different classes that moves through the array in different ways
+deer, couger, jaguar
+if deer is in attack range of the cougar or jaguar they die
