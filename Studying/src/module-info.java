@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author tlyra
- *
- */
-module Studying {
-}
