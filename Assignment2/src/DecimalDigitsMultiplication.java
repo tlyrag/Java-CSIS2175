@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 public class DecimalDigitsMultiplication {
 	public static void main(String[] args) {
-		String a ="1454";
+		String a ="145423423123124123";
 		
-		String b ="87";
+		String b ="8742341231231";
 
 		ArrayList<String> reva = reverseInt(a);
 		ArrayList<String> revb = reverseInt(b);
 	
 //		multiplication(reva,revb);
 		ArrayList<ArrayList<String>> arr = addZero(multiplication(reva,revb));
-		System.out.println(arr);
+		//System.out.println(arr);
 		
 		ArrayList<String> FinalNumberArray =sumProducts(arr); 
 		System.out.println(buildFinalNumber(FinalNumberArray)); 
@@ -84,7 +84,7 @@ public class DecimalDigitsMultiplication {
 				ProductTemp.add("0");
 			}
 		}
-		System.out.println(Products);
+		//System.out.println(Products);
 		return Products;
 	}
 	//// Add zero to the begining of the number until they have the same amount of length
@@ -132,7 +132,7 @@ public class DecimalDigitsMultiplication {
 		
 			FinalNumbers.add(Integer.toString(result));
 
-			System.out.println(FinalNumbers);
+			//System.out.println(FinalNumbers);
 			result = 0;
 			
 			if(addition >0) {
