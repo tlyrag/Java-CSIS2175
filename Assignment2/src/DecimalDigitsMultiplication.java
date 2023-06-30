@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class DecimalDigitsMultiplication {
 	public static void main(String[] args) {
-		String a ="13";
+		String a ="1454";
 		
 		String b ="87";
 
@@ -12,8 +12,9 @@ public class DecimalDigitsMultiplication {
 		ArrayList<ArrayList<String>> arr = addZero(multiplication(reva,revb));
 		System.out.println(arr);
 		
-		sumProducts(arr) ;
-		System.out.println(); 
+		ArrayList<String> FinalNumberArray =sumProducts(arr); 
+		System.out.println(buildFinalNumber(FinalNumberArray)); 
+		
 	}
 	
 	// Reverse String to an ArrayList
@@ -72,6 +73,7 @@ public class DecimalDigitsMultiplication {
 			// Adding a clone as if I added the original and clear, the reference would miss
 			
 			Products.add((ArrayList<String>) ProductTemp.clone());
+			addition = 0;
 			ProductTemp.clear();
 			
 			
@@ -107,43 +109,51 @@ public class DecimalDigitsMultiplication {
 	}
 	
 	//Sum all products
-	public static void sumProducts(ArrayList<ArrayList<String>> productArray) {
+	public static ArrayList<String>  sumProducts(ArrayList<ArrayList<String>> productArray) {
 		ArrayList<String> FinalNumbers =new  ArrayList<String>();
 		int result =0;
 		int addition =0;
 		int productNumToAppend=0;
+		int countLength=0;
+		
 		for(int i =0; i<productArray.get(0).size();i++) {
+			
 			for(int j=0; j<productArray.size();j++) {
 				result += Integer.parseInt(productArray.get(j).get(i)) ;
 				
-				// Adding the number of 10 to the next number
-				if(addition >0) {
-					result+=addition;
-					addition =0;
-				}
-				
-				/// If the result is bigger or equal than 10 garb the "quantity of tens"
-				// to add to the next result
 				if(result >=10) {
 					productNumToAppend = result%10;
 					addition = result/10;
 					result = productNumToAppend;
 				}
 				
-				
-				
-				if(j==productArray.size()-1 && addition>0) {
-					FinalNumbers.add(Integer.toString(addition));
-				}
-				
-				
-				
-				
-				
 			}
+
+		
 			FinalNumbers.add(Integer.toString(result));
+
 			System.out.println(FinalNumbers);
 			result = 0;
+			
+			if(addition >0) {
+				result+=addition;
+				addition =0;
+			}
+			if(countLength==productArray.size() && result>0) {
+				FinalNumbers.add(Integer.toString(result));
+			}
+			countLength++;
 		}
+		return FinalNumbers;
+	}
+	public static String buildFinalNumber(ArrayList<String> FinalNumberArray) {
+		FinalNumberArray = reverseInt(FinalNumberArray);
+		
+		StringBuilder FinalNumberString = new StringBuilder();
+		for(int i =0; i<FinalNumberArray.size();i++) {
+			FinalNumberString.append(FinalNumberArray.get(i));
+		}
+		return FinalNumberString.toString();
+		//System.out.println(FinalNumberString);
 	}
 }
