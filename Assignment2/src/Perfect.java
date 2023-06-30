@@ -4,7 +4,7 @@ public class Perfect {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayList<Integer> perfectNumList = new ArrayList<Integer>();
-		
+		//testCode();
 		for(int i = 1;i<=1000;i++) {
 			if(i == getListSum(getEvenlyDivedNumbers(i))) {
 				perfectNumList.add(i);
@@ -33,9 +33,13 @@ public class Perfect {
 		}
 		return sumNumber;
 	}
-	public static void displayList(ArrayList<Integer> list) {
-		for(int i =0; i<list.size();i++) {
-			System.out.println(list.get(i));
+
+	public static void testCode() {
+		if (getListSum(getEvenlyDivedNumbers(6))==6) {
+			System.out.println("Code is Working");
+		} else {
+			System.out.println("Code is not Working");
 		}
+		
 	}
 }

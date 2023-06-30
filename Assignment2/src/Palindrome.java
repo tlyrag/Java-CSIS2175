@@ -5,8 +5,9 @@ public class Palindrome {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		
+		//TESTING CODE
+			//testCode();
+		//
 		//Geting user input
 		String userInput = getUserInput();
 		
@@ -68,6 +69,25 @@ public class Palindrome {
 			String userInput =input.nextLine();
 			return userInput;
 		
+	}
+	public static void testCode() {
+		ArrayList<Character> lettersInUserInput = getLettersInPhrase("Madam, I'm Adam");
+		String userPhraseLetters = buildString(lettersInUserInput).toString();
+		
+		// Reversing the array and building the String with letters only
+		ArrayList<Character> reverseLettersInUserInput = reverseArray(lettersInUserInput);
+		String userReversePhraseLetters = buildString(reverseLettersInUserInput).toString();
+		
+		//Checking if it is Palindrome
+		
+		boolean isCodeWorking = palindromeChecker(userPhraseLetters,userReversePhraseLetters);
+		
+		if(isCodeWorking) {
+			System.out.println("Code is Working");
+			
+		} else {
+			System.out.println("Code is not Working");
+		}
 	}
 
 }
