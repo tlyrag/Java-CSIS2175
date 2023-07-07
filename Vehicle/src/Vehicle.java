@@ -1,8 +1,8 @@
 
 public abstract class Vehicle {
 	public String powerSource;
-	protected int wheels;
-	private int price;
+	private int wheels;
+	protected int price;
 	
 	public Vehicle(String powerSource, int wheels, int price) {
 		this.powerSource = powerSource;
@@ -11,4 +11,12 @@ public abstract class Vehicle {
 	}
 	
 	public abstract void setPrice(int price);
+	
+	public int getPrice() {
+		return this.price;
+	}
+	public int getWheels() {
+		return this.wheels;
+	}
+	
 }
