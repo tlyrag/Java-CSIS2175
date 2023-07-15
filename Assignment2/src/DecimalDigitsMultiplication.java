@@ -1,19 +1,31 @@
 import java.util.ArrayList;
-public class DecimalDigitsMultiplication {
-	public static void main(String[] args) {
-		String a ="145423423123124123";
-		
-		String b ="8742341231231";
+import java.util.Scanner;	
 
-		ArrayList<String> reva = reverseInt(a);
-		ArrayList<String> revb = reverseInt(b);
+
+public class DecimalDigitsMultiplication {
+	
+	public static Scanner input = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		
+		//////////// Method to test the code
+		//testCode(); 
+		
+		
+		String multiplier1 =getUserInput();
+		String multiplier2 =getUserInput();
+		//String multiplier1="789";
+		//String multiplier2="582";
+
+		ArrayList<String> reva = reverseInt(multiplier1);
+		ArrayList<String> revb = reverseInt(multiplier2);
 	
 //		multiplication(reva,revb);
 		ArrayList<ArrayList<String>> arr = addZero(multiplication(reva,revb));
 		//System.out.println(arr);
 		
 		ArrayList<String> FinalNumberArray =sumProducts(arr); 
-		System.out.println(buildFinalNumber(FinalNumberArray)); 
+		System.out.println("Result is: "+buildFinalNumber(FinalNumberArray)); 
 		
 	}
 	
@@ -84,7 +96,7 @@ public class DecimalDigitsMultiplication {
 				ProductTemp.add("0");
 			}
 		}
-		//System.out.println(Products);
+		System.out.println("Products array to sum: "+ Products);
 		return Products;
 	}
 	//// Add zero to the begining of the number until they have the same amount of length
@@ -121,14 +133,12 @@ public class DecimalDigitsMultiplication {
 			for(int j=0; j<productArray.size();j++) {
 				result += Integer.parseInt(productArray.get(j).get(i)) ;
 				
-				if(result >=10) {
-					productNumToAppend = result%10;
-					addition = result/10;
-					result = productNumToAppend;
-				}
-				
 			}
-
+			if(result >=10) {
+				productNumToAppend = result%10;
+				addition = result/10;
+				result = productNumToAppend;
+			}
 		
 			FinalNumbers.add(Integer.toString(result));
 
@@ -139,7 +149,7 @@ public class DecimalDigitsMultiplication {
 				result+=addition;
 				addition =0;
 			}
-			if(countLength==productArray.size() && result>0) {
+			if(countLength==productArray.get(0).size() && result>0) {
 				FinalNumbers.add(Integer.toString(result));
 			}
 			countLength++;
@@ -155,5 +165,25 @@ public class DecimalDigitsMultiplication {
 		}
 		return FinalNumberString.toString();
 		//System.out.println(FinalNumberString);
+	}
+	public static String getUserInput() {
+		String userInput;
+		System.out.println("Please inform a number");
+		userInput = input.nextLine();
+		
+		return userInput;
+	}
+	
+	public static void testCode() {
+		ArrayList<String> reva = reverseInt("789");
+		ArrayList<String> revb = reverseInt("582");
+		
+		ArrayList<ArrayList<String>> arr = addZero(multiplication(reva,revb));
+		ArrayList<String> FinalNumberArray =sumProducts(arr); 
+		if (buildFinalNumber(FinalNumberArray).equals("459198")) {
+			System.out.println("Code is working");
+		} else {
+			System.out.println("Code is not working");
+		}
 	}
 }

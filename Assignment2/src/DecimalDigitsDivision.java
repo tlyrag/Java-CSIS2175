@@ -13,7 +13,7 @@ public class DecimalDigitsDivision {
 		System.out.println("Please enter Dividend");
 		int dividend = getUserInput();
 		System.out.println("Please enter Divisor");
-		int divisor = getUserInput();;
+		int divisor = getUserInput();
 		
 		
 		Division(dividend,divisor);

@@ -11,7 +11,7 @@ public class LeapYear {
 		/// TestingLeapYearFunction////
 		
 		int userInput = getUserInput();
-		System.out.println(userInput%400);
+		
 		leapCheck(userInput);
 		
 		
