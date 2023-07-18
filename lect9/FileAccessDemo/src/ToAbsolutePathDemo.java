@@ -1,21 +1,21 @@
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
-import java.nio.file.*;
+
 public class ToAbsolutePathDemo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String name;
 		Scanner input = new Scanner(System.in);
+		System.out.println("Pls enter a file name: ");
+		String name = input.nextLine();
+		name = "result.txt";
+		Path fileName = Paths.get(name);
 		
-		System.out.println("Pls input a file name");
+		Path fullPath = fileName.toAbsolutePath();
 		
-		name = input.nextLine();
-		
-		Path inputPath = Paths.get(name);
-		Path fullPath = inputPath.toAbsolutePath();
-		
-		System.out.println("Full path is "+ fullPath.toString());
-		
+		System.out.println(fileName);
+		System.out.println(fullPath);
 	}
 
 }
