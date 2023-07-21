@@ -5,6 +5,7 @@ public class AnimalDemo {
 		// TODO Auto-generated method stub
 		Animal[] animalRef = new Animal[10];
 		
+		
 		for(int i=0;i<animalRef.length;i++)
 		{
 			if(i%3==0)
@@ -23,7 +24,12 @@ public class AnimalDemo {
 				animalRef[i].speak();
 			}	
 		}
+		boolean isDogAnAnimal = (animalRef[1] instanceof Animal);
+		System.out.println(isDogAnAnimal);
+
 		
+			
+
 	}
 
 }

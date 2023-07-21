@@ -6,5 +6,5 @@ public class Cow extends Animal{
 		// TODO Auto-generated method stub
 		System.out.println("Mow~~~");
 	}
-
+	
 }
