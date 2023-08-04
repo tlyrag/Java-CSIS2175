@@ -1,0 +1,8 @@
+Read a CSV file with items
+Create a databse and tables
+Loop through items and add to the database
+Make a GUI application to interact with the data from the database
+Manipulate the database using java instead of SQL
+Write some information into Database and into File
+
+Cheatsheet 3 papers front and back
