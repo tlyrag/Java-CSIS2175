@@ -1,7 +1,7 @@
 
 public class Permutation {
 	public static void main(String[] args) {
-		String a = "1234";
+		String a = "god";
 		permute(a);
 	}
 	public static void permute(String str) {
